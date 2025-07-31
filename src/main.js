@@ -10,6 +10,9 @@ import GlobalComponents from '@/components/index.js'
 // svg图标
 import 'virtual:svg-icons-register'
 
+// global css
+import '@/assets/styles/index.scss' 
+
 const app = createApp(App)
 
 app.use(createPinia())
