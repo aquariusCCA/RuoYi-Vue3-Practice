@@ -1,0 +1,161 @@
+{
+  "listUser": {
+    "total": 2,
+    "rows": [
+      {
+        "createBy": "admin",
+        "createTime": "2025-05-26 10:07:46",
+        "updateBy": null,
+        "updateTime": null,
+        "remark": "管理员",
+        "userId": 1,
+        "deptId": 103,
+        "userName": "admin",
+        "nickName": "若依",
+        "email": "ry@163.com",
+        "phonenumber": "15888888888",
+        "sex": "1",
+        "avatar": "",
+        "password": null,
+        "status": "0",
+        "delFlag": "0",
+        "loginIp": "183.192.232.44",
+        "loginDate": "2025-08-01T13:40:44.000+08:00",
+        "pwdUpdateDate": null,
+        "dept": {
+          "createBy": null,
+          "createTime": null,
+          "updateBy": null,
+          "updateTime": null,
+          "remark": null,
+          "deptId": 103,
+          "parentId": null,
+          "ancestors": null,
+          "deptName": "研发部门",
+          "orderNum": null,
+          "leader": "若依",
+          "phone": null,
+          "email": null,
+          "status": null,
+          "delFlag": null,
+          "parentName": null,
+          "children": []
+        },
+        "roles": [],
+        "roleIds": null,
+        "postIds": null,
+        "roleId": null,
+        "admin": true
+      },
+      {
+        "createBy": "admin",
+        "createTime": "2025-05-26 10:07:47",
+        "updateBy": null,
+        "updateTime": null,
+        "remark": "测试员",
+        "userId": 2,
+        "deptId": 105,
+        "userName": "ry",
+        "nickName": "若依",
+        "email": "ry@qq.com",
+        "phonenumber": "15666666666",
+        "sex": "1",
+        "avatar": "",
+        "password": null,
+        "status": "0",
+        "delFlag": "0",
+        "loginIp": "118.114.95.144",
+        "loginDate": "2025-08-01T13:32:24.000+08:00",
+        "pwdUpdateDate": null,
+        "dept": {
+          "createBy": null,
+          "createTime": null,
+          "updateBy": null,
+          "updateTime": null,
+          "remark": null,
+          "deptId": 105,
+          "parentId": null,
+          "ancestors": null,
+          "deptName": "测试部门",
+          "orderNum": null,
+          "leader": "若依",
+          "phone": null,
+          "email": null,
+          "status": null,
+          "delFlag": null,
+          "parentName": null,
+          "children": []
+        },
+        "roles": [],
+        "roleIds": null,
+        "postIds": null,
+        "roleId": null,
+        "admin": false
+      }
+    ],
+    "code": 200,
+    "msg": "查询成功"
+  },
+  "deptTreeSelect": {
+    "msg": "操作成功",
+    "code": 200,
+    "data": [
+      {
+        "id": 100,
+        "label": "若依科技",
+        "disabled": false,
+        "children": [
+          {
+            "id": 101,
+            "label": "深圳总公司",
+            "disabled": false,
+            "children": [
+              {
+                "id": 103,
+                "label": "研发部门",
+                "disabled": false
+              },
+              {
+                "id": 104,
+                "label": "市场部门",
+                "disabled": false
+              },
+              {
+                "id": 105,
+                "label": "测试部门",
+                "disabled": false
+              },
+              {
+                "id": 106,
+                "label": "财务部门",
+                "disabled": false
+              },
+              {
+                "id": 107,
+                "label": "运维部门",
+                "disabled": false
+              }
+            ]
+          },
+          {
+            "id": 102,
+            "label": "长沙分公司",
+            "disabled": false,
+            "children": [
+              {
+                "id": 108,
+                "label": "市场部门",
+                "disabled": false
+              },
+              {
+                "id": 109,
+                "label": "财务部门",
+                "disabled": false
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

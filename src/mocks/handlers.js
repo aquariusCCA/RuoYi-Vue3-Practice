@@ -44,4 +44,8 @@ export const handlers = [
   http.post(`${BASE_URL}/login`, mockResolver),
   http.get(`${BASE_URL}/getInfo?mode=test`, mockResolver),
   http.get(`${BASE_URL}/getRouters?mode=test`, mockResolver),
+  http.get(`${BASE_URL}/system/user/list?pageNum=1&pageSize=10&mode=test`, mockResolver),
+  http.get(`${BASE_URL}/system/user/deptTree?mode=test`, mockResolver),
+  http.get(`${BASE_URL}/system/config/configKey/sys.user.initPassword?mode=test`, mockResolver),
+  http.get(`${BASE_URL}/system/dept/list?mode=test`, mockResolver),
 ];
