@@ -215,6 +215,9 @@
       // you can use $sub-menuHover
       background-color: rgba(0, 0, 0, 0.06) !important;
     }
+    .svg-icon {
+      vertical-align: unset;
+    }
   }
 
   // the scroll bar appears when the sub-menu is too long
