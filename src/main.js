@@ -1,7 +1,9 @@
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
+
 import Cookies from 'js-cookie'
+
 import App from './App.vue'
+import store from './store'
 import router from './router'
 
 // 引入全局组件
@@ -38,8 +40,8 @@ if (import.meta.env.DEV) {
 
 const app = createApp(App)
 
-app.use(createPinia())
 app.use(GlobalComponents)
+app.use(store)
 app.use(router)
 
 // 使用element-plus 并且设置全局的大小
