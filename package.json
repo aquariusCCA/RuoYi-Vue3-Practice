@@ -22,6 +22,7 @@
     "fast-glob": "^3.3.3",
     "file-saver": "^2.0.5",
     "fuse.js": "^7.1.0",
+    "idb-keyval": "^6.2.2",
     "js-beautify": "^1.15.4",
     "js-cookie": "^3.0.5",
     "jsencrypt": "^3.3.2",
@@ -35,6 +36,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.1",
+    "msw": "^2.10.4",
     "sass-embedded": "^1.89.2",
     "unplugin-auto-import": "^19.3.0",
     "unplugin-vue-setup-extend-plus": "^1.0.1",
@@ -42,5 +44,10 @@
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-svg-icons": "^2.0.1",
     "vite-plugin-vue-devtools": "^8.0.0"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }

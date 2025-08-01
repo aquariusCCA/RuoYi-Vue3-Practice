@@ -19,6 +19,22 @@ import "element-plus/dist/index.css";
 import zhTw from "element-plus/es/locale/lang/zh-tw";
 import 'element-plus/theme-chalk/dark/css-vars.css'
 
+// 引入假資料
+import { worker } from "./mocks/browser";
+import { setSeeds } from "@/mocks/seeds";
+
+// 開發環境可使用API假資料
+if (import.meta.env.DEV) {
+  console.log("這是開發環境，將使用假資料API");
+  // 注入假資料
+  setSeeds();
+
+  // 啟動 MSW 假資料服務
+  await worker.start({
+    onUnhandledRequest: "bypass", // 不顯示任何警告，直接放行
+  });
+}
+
 
 const app = createApp(App)
 
