@@ -39,25 +39,9 @@ const mockResolver = async ({ request }) => {
 };
 
 export const handlers = [
-  http.get(`${BASE_URL}/api/test/get`, () => {
-    return HttpResponse.json({
-      code: 200,
-      message: "test get method successful",
-      ok: true,
-      data: {
-        token: "token1234567890",
-      },
-    });
-  }),
-
-  http.post(`${BASE_URL}/api/test/post`, () => {
-    return HttpResponse.json({
-      code: 200,
-      message: "test post method successful",
-      ok: true,
-      data: {
-        token: "token1234567890",
-      },
-    });
-  }),
+  // 模擬登入、獲取用戶信息和路由
+  http.get(`${BASE_URL}/captchaImage?mode=test`, mockResolver),
+  http.post(`${BASE_URL}/login`, mockResolver),
+  http.get(`${BASE_URL}/getInfo?mode=test`, mockResolver),
+  http.get(`${BASE_URL}/getRouters?mode=test`, mockResolver),
 ];

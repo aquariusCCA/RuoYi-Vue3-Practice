@@ -12,22 +12,52 @@ export const ApiMode = {
   PROD: "prod",
 }
 
+/** 是否為開發／測試模式 */
+const isTestMode = import.meta.env.DEV;
+
+/** 統一注入測試參數 */
+function injectTestParams(config) {
+  if (!isTestMode) return;
+
+  const marker = { mode: ApiMode.TEST };
+  const method = (config.method ?? "get").toLowerCase();
+
+  // POST / PUT / PATCH / DELETE：把 mode 放到 body
+  if (["post", "put", "patch", "delete"].includes(method)) {
+    config.data = {
+      ...((config.data) || {}),
+      ...marker,
+    };
+  }
+  // 其餘方法：放到 query params
+  else {
+    config.params = {
+      ...((config.params) || {}),
+      ...marker,
+    };
+  }
+}
+
 let downloadLoadingInstance
 
 // 是否显示重新登录
 export let isRelogin = { show: false }
 
 axios.defaults.headers['Content-Type'] = 'application/json;charset=utf-8'
+
 // 创建axios实例
 const service = axios.create({
   // axios中请求配置有baseURL选项，表示请求URL公共部分
-  baseURL: import.meta.env.VITE_APP_BASE_API,
+  baseURL: import.meta.env.VITE_SERVER,
   // 超时
   timeout: 10000
 })
 
 // request拦截器
 service.interceptors.request.use(config => {
+  // 注入测试模式参数
+  injectTestParams(config);
+
   // 是否需要设置 token
   const isToken = (config.headers || {}).isToken === false
   // 是否需要防止数据重复提交
