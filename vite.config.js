@@ -17,6 +17,9 @@ export default defineConfig(({ mode, command }) => {
       alias: {
         "@": fileURLToPath(new URL("./src", import.meta.url)),
       },
+      // https://cn.vitejs.dev/config/#resolve-extensions
+      // 省略文件扩展名
+      extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json", ".vue"],
     },
     // 打包配置
     build: {
@@ -33,5 +36,21 @@ export default defineConfig(({ mode, command }) => {
         },
       },
     },
+    // css: {
+    //   postcss: {
+    //     plugins: [
+    //       {
+    //         postcssPlugin: "internal:charset-removal",
+    //         AtRule: {
+    //           charset: (atRule) => {
+    //             if (atRule.name === "charset") {
+    //               atRule.remove();
+    //             }
+    //           },
+    //         },
+    //       },
+    //     ],
+    //   },
+    // },
   };
 });
