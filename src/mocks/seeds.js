@@ -1,5 +1,5 @@
 import { setMany } from "idb-keyval";
-import { login, getInfo, getCodeImg } from "./jsons/user.json";
+import { login, logout, getInfo, getCodeImg } from "./jsons/login.json";
 import { getRouters } from './jsons/menu.json';
 import { listUser, deptTreeSelect } from './jsons/system/user.json';
 import { getConfigKey } from './jsons/system/config.json';
@@ -15,6 +15,7 @@ export const setSeeds = async () => {
       // [url, json key]    
       [`${BASE_URL}/captchaImage?mode=test`, getCodeImg],
       [`${BASE_URL}/login`, login],
+      [`${BASE_URL}/logout`, logout],
       [`${BASE_URL}/getInfo?mode=test`, getInfo],
       [`${BASE_URL}/getRouters?mode=test`, getRouters],
       [`${BASE_URL}/system/user/list?pageNum=1&pageSize=10&mode=test`, listUser],

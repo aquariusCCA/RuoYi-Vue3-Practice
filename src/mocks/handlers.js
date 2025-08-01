@@ -42,6 +42,7 @@ export const handlers = [
   // 模擬登入、獲取用戶信息和路由
   http.get(`${BASE_URL}/captchaImage?mode=test`, mockResolver),
   http.post(`${BASE_URL}/login`, mockResolver),
+  http.post(`${BASE_URL}/logout`, mockResolver),
   http.get(`${BASE_URL}/getInfo?mode=test`, mockResolver),
   http.get(`${BASE_URL}/getRouters?mode=test`, mockResolver),
   http.get(`${BASE_URL}/system/user/list?pageNum=1&pageSize=10&mode=test`, mockResolver),

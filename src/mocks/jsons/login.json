@@ -11,6 +11,10 @@
     "code": 200,
     "token": "eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6ImFlODM1YjQ3LWQyMmEtNDdjZi04ZmM3LWI5MTBlZjNhNDNjOSJ9.LlW_cq1n7wuXCxSqovkEC4qaSSrqhdRAoWWGJhjPpyQIzj_uSn9wtcxER30O7agwPLEzkv6EWEnJspi1w4uz8Q"
   },
+  "logout": {
+    "msg": "操作成功",
+    "code": 200
+  },
   "getInfo": {
     "msg": "操作成功",
     "code": 200,
