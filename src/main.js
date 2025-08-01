@@ -21,6 +21,9 @@ import "element-plus/dist/index.css";
 import zhTw from "element-plus/es/locale/lang/zh-tw";
 import 'element-plus/theme-chalk/dark/css-vars.css'
 
+// 引入权限控制
+import './permission' 
+
 // 引入假資料
 import { worker } from "./mocks/browser";
 import { setSeeds } from "@/mocks/seeds";
