@@ -1,26 +1,40 @@
 <template>
   <svg :class="svgClass" aria-hidden="true">
-    <use :xlink:href="iconName" :fill="props.color" />
+    <use :xlink:href="iconName" :fill="color" />
   </svg>
 </template>
 
-<script setup lang="ts">
-import { computed } from 'vue'
-
-const props = defineProps<{
-  iconClass: string
-  className?: string
-  color?: string
-}>()
-
-const iconName = computed(() => `#icon-${props.iconClass}`)
-
-const svgClass = computed(() =>
-  props.className ? `svg-icon ${props.className}` : 'svg-icon'
-)
+<script>
+export default defineComponent({
+  props: {
+    iconClass: {
+      type: String,
+      required: true
+    },
+    className: {
+      type: String,
+      default: ''
+    },
+    color: {
+      type: String,
+      default: ''
+    },
+  },
+  setup(props) {
+    return {
+      iconName: computed(() => `#icon-${props.iconClass}`),
+      svgClass: computed(() => {
+        if (props.className) {
+          return `svg-icon ${props.className}`
+        }
+        return 'svg-icon'
+      })
+    }
+  }
+})
 </script>
 
-<style scoped lang="scss">
+<style scope lang="scss">
 .sub-el-icon,
 .nav-icon {
   display: inline-block;
