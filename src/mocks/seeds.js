@@ -20,6 +20,7 @@ import {
   listUserByPhonenumber,
   listUserByDate,
   deptTreeSelect,
+  changeUserStatus,
 } from "./jsons/system/user.json";
 import { getConfigKeySysUserInitPassword } from "./jsons/system/config.json";
 import { listDept } from "./jsons/system/dept.json";
@@ -118,8 +119,8 @@ export const setSeeds = async () => {
         `${BASE_URL}/system/config/configKey/sys.user.initPassword?mode=test`,
         getConfigKeySysUserInitPassword,
       ],
-      [`${BASE_URL}/system/dept/list?mode=test`, listDept],
       [`${BASE_URL}/system/dict/data/type/sys_user_sex?mode=test`, getDictsSysUserSex],
+      [`${BASE_URL}/system/user/changeStatus`, changeUserStatus],
     ]);
   } catch (err) {
     console.log(err);

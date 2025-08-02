@@ -64,7 +64,7 @@ export const handlers = [
   http.get(`${BASE_URL}/system/user/list?pageNum=1&pageSize=10&params%5BbeginTime%5D=2025-05-01&params%5BendTime%5D=2025-05-30&mode=test`, mockResolver),
   http.get(`${BASE_URL}/system/user/deptTree?mode=test`, mockResolver),
   http.get(`${BASE_URL}/system/config/configKey/sys.user.initPassword?mode=test`, mockResolver),
-  http.get(`${BASE_URL}/system/dept/list?mode=test`, mockResolver),
   http.get(`${BASE_URL}/system/dict/data/type/sys_normal_disable?mode=test`, mockResolver),
   http.get(`${BASE_URL}/system/dict/data/type/sys_user_sex?mode=test`, mockResolver),
+  http.put(`${BASE_URL}/system/user/changeStatus`, mockResolver),
 ];
