@@ -23,11 +23,26 @@ import {
   changeUserStatus,
 } from "./jsons/system/user.json";
 import { getConfigKeySysUserInitPassword } from "./jsons/system/config.json";
-import { listDept } from "./jsons/system/dept.json";
 import {
   getDictsSysNormalDisable,
   getDictsSysUserSex,
 } from "./jsons/system/dict/data.json";
+import {
+  listRolePageSize10,
+  listRoleByRoleName,
+  listRoleByRoleKey,
+  listRoleByStatus,
+  listRoleByDate,
+  addRole,
+  changeRoleStatus,
+  getRoleByRoleId1,
+  updateRole,
+  delRole
+} from "./jsons/system/role.json";
+import {
+  treeselect,
+  roleMenuTreeselectByRpleId1,
+} from "./jsons/system/menu.json";
 
 const BASE_URL = import.meta.env.VITE_SERVER;
 
@@ -111,7 +126,7 @@ export const setSeeds = async () => {
         listUserByStatus,
       ],
       [
-        `${BASE_URL}/system/user/list?pageNum=1&pageSize=10&params%5BbeginTime%5D=2025-05-01&params%5BendTime%5D=2025-05-30&mode=test`,
+        `${BASE_URL}/system/user/list?pageNum=1&pageSize=10&params%5BbeginTime%5D=2025-05-01&params%5BendTime%5D=2025-05-31&mode=test`,
         listUserByDate,
       ],
       [`${BASE_URL}/system/user/deptTree?mode=test`, deptTreeSelect],
@@ -119,8 +134,38 @@ export const setSeeds = async () => {
         `${BASE_URL}/system/config/configKey/sys.user.initPassword?mode=test`,
         getConfigKeySysUserInitPassword,
       ],
-      [`${BASE_URL}/system/dict/data/type/sys_user_sex?mode=test`, getDictsSysUserSex],
+      [
+        `${BASE_URL}/system/dict/data/type/sys_user_sex?mode=test`,
+        getDictsSysUserSex,
+      ],
       [`${BASE_URL}/system/user/changeStatus`, changeUserStatus],
+      [
+        `${BASE_URL}/system/role/list?pageNum=1&pageSize=10&mode=test`,
+        listRolePageSize10,
+      ],
+      [
+        `${BASE_URL}/system/role/list?pageNum=1&pageSize=10&roleName=%E8%B6%85%E7%BA%A7%E7%AE%A1%E7%90%86%E5%91%98&mode=test`,
+        listRoleByRoleName,
+      ],
+      [
+        `${BASE_URL}/system/role/list?pageNum=1&pageSize=10&roleKey=admin&mode=test`,
+        listRoleByRoleKey,
+      ],
+      [
+        `${BASE_URL}/system/role/list?pageNum=1&pageSize=10&status=0&mode=test`,
+        listRoleByStatus,
+      ],
+      [
+        `${BASE_URL}/system/role/list?pageNum=1&pageSize=10&params%5BbeginTime%5D=2025-05-01&params%5BendTime%5D=2025-05-31&mode=test`,
+        listRoleByDate,
+      ],
+      [`${BASE_URL}/system/menu/treeselect`, treeselect],
+      [`${BASE_URL}/system/role`, addRole],
+      [`${BASE_URL}/system/role/changeStatus`, changeRoleStatus],
+      [`${BASE_URL}/system/menu/roleMenuTreeselect/1?mode=test`, roleMenuTreeselectByRpleId1],
+      [`${BASE_URL}/system/role/1?mode=test`, getRoleByRoleId1],
+      [`${BASE_URL}/system/role`, updateRole],
+      [`${BASE_URL}/system/role/1`, delRole],
     ]);
   } catch (err) {
     console.log(err);
