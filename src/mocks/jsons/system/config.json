@@ -1,3 +1,3 @@
 {
-  "getConfigKey": { "msg": "123456", "code": 200 }
+  "getConfigKeySysUserInitPassword": { "msg": "123456", "code": 200 }
 }
